@@ -9,3 +9,50 @@ maintenance
 we will use the scrum development model
 
 
+
+
+
+roadmap
+
+start from your goal:
+why am i making this project?
+who is this project for?
+what is going to make it valuable?
+
+write user stories:
+10-20 user stories, core and nice to have
+
+
+define the data models: what data we need to handle
+and information and how do they relate to each other
+
+
+make an mvp ( cut out the function that your app can function without)
+
+draw a simple wireframe of the website on paper
+
+is it scalable project or not?
+
+the environment of the project 
+
+pick the stack (after the planning). the simplest the stack that is relevant
+
+front, back, database.
+
+can this be deployed?
+
+development process, create a project development, version control
+folder structure
+
+data models, build then the api route.
+
+
+front end interface.
+
+project iteration
+
+
+
+
+
+
