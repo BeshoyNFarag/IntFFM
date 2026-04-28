@@ -1,0 +1,11 @@
+what to do now from the SDLC
+we start with gatehering the requirements
+we then go into the architecure, the components the stack, the design
+development
+testing and QA
+deployment 
+maintenance
+
+we will use the scrum development model
+
+
