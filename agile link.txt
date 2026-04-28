@@ -1,1 +1,9 @@
 https://beshoynady401.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog
+define epics
+themes
+Themes — define your strategic areas first
+Epics — break themes into concrete feature groups
+User Stories — break epics into specific user needs
+Software Architecture & Requirements — now that you know exactly what you're building, you design the system to support it
+ERD & Database Design — flows directly from the requirements
+Figma / UI Design — once you know what screens exist based on your stories and architecture
