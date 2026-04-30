@@ -1,4 +1,4 @@
-https://beshoynady401.atlassian.net/jira/software/projects/SCRUM/boards/1/backlog
+https://beshoynady401.atlassian.net/jira/software/projects/KAN/boards/34/backlog
 define epics
 themes
 Themes — define your strategic areas first
