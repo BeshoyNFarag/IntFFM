@@ -8,6 +8,7 @@ public class MIntFfmApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MIntFfmApplication.class, args);
+
 	}
 
 }
