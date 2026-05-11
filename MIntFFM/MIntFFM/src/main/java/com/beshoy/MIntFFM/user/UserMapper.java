@@ -8,6 +8,10 @@ public class UserMapper {
 
 
     public UserEntity toEntity(UserSignUpDTORequest dto) {
+
+        if (dto == null) {
+            throw new IllegalArgumentException("User Sign up information is empty it cannot be null");
+        }
         UserEntity user = new UserEntity();
         user.setFirstName(dto.firstName());
         user.setLastName(dto.lastName());
@@ -19,6 +23,10 @@ public class UserMapper {
 
 
     public UserResponseDTO toResponseDTO(UserEntity user) {
+
+        if (user == null) {
+            throw new IllegalArgumentException("UserEntity cannot be null");
+        }
         return new UserResponseDTO(
                 user.getUserId(),
                 user.getFirstName(),
@@ -29,10 +37,7 @@ public class UserMapper {
         );
     }
 
-    public UserEntity toEntity(UserSignInDTORequest dto) {
-        UserEntity user = new UserEntity();
-        user.setEmail(dto.email());
-        user.setPassword(dto.password());
-        return user;
-    }
+
+
+
 }
