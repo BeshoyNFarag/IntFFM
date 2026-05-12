@@ -7,38 +7,24 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-
+@RequestMapping("/users")
 public class UserController {
 
-    private final UserRepo userRepo;
-    private final UserMapper userMapper;  // Inject mapper
+    private final UserService userService;  // ONLY this!
 
-    public UserController(UserRepo userRepo, UserMapper userMapper) {
-        this.userRepo = userRepo;
-
-        this.userMapper = userMapper;
+    public UserController(UserService userService) {
+        this.userService = userService;
     }
 
     @PostMapping("/signup")
     @ResponseStatus(HttpStatus.CREATED)
-    public UserResponseDTO signUp( @Valid @RequestBody UserSignUpDTORequest signUpRequest) {
-        UserEntity user = userMapper.toEntity(signUpRequest);
-        user.setPassword(user.getPassword());
-
-        UserEntity savedUser = userRepo.save(user);
-        return userMapper.toResponseDTO(savedUser);
+    public UserResponseDTO signUp(@Valid @RequestBody UserSignUpDTORequest signUpRequest) {
+        return userService.signUp(signUpRequest);
     }
 
     @PostMapping("/signin")
-
     public ResponseEntity<UserResponseDTO> signIn(@Valid @RequestBody UserSignInDTORequest signInRequest) {
-        UserEntity user = userRepo.findByEmail(signInRequest.email())
-                .orElseThrow(() -> new RuntimeException("Invalid credentials"));
-
-        if (!signInRequest.password().equals(user.getPassword())) {
-            throw new RuntimeException("Invalid credentials");
-        }
-
-        return ResponseEntity.ok(userMapper.toResponseDTO(user));
+        UserResponseDTO user = userService.signIn(signInRequest);
+        return ResponseEntity.ok(user);
     }
 }
