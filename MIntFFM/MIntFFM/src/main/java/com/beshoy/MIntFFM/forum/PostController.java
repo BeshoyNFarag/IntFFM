@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/posts")
 public class PostController {
 
     PostRepo postRepo;
@@ -18,13 +19,13 @@ public class PostController {
         this.postService = postService;
     }
 
-    @PostMapping("/posts/create")
+    @PostMapping("create")
     public ResponseEntity<PostResponseDTO> createPost(@Valid @RequestBody PostCreateDTORequest postRequest) {
         PostResponseDTO createdPost = postService.createPost(postRequest);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdPost);
     }
 
-    @DeleteMapping("/posts/delete")
+    @DeleteMapping("delete")
     public ResponseEntity<PostDeleteResponseDTO> deletePost(@Valid @RequestBody PostDeleteRequestDTO request) {
         PostDeleteResponseDTO response = postService.deletePost(request);
         return ResponseEntity.ok(response);

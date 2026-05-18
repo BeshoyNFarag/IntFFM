@@ -23,6 +23,8 @@ public class CommentController {
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
+    //gets all the comments on a post
+
     @GetMapping("/post/{postId}")
     public ResponseEntity<List<CommentResponseDTO>> getCommentsByPost(@PathVariable Long postId) {
         List<CommentResponseDTO> comments = commentService.getCommentsByPost(postId);
@@ -35,6 +37,7 @@ public class CommentController {
         return ResponseEntity.ok(response);
     }
 
+    //gets all the comments by a user
     @GetMapping("/user/{userId}")
     public ResponseEntity<List<CommentResponseDTO>> getCommentsByUser(@PathVariable Long userId) {
         List<CommentResponseDTO> comments = commentService.getCommentsByUser(userId);
