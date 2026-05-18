@@ -1,19 +1,15 @@
 package com.beshoy.MIntFFM.user;
 
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 
 @Service
+@AllArgsConstructor
 public class UserService {
 
     private final UserRepo userRepo;
     private final UserMapper userMapper;
-
-    public UserService(UserRepo userRepo, UserMapper userMapper) {
-        this.userRepo = userRepo;
-        this.userMapper = userMapper;
-    }
-
 
     public UserResponseDTO signUp(UserSignUpDTORequest signUpRequest) {
 
@@ -36,7 +32,6 @@ public class UserService {
 
         return userMapper.toResponseDTO(savedUser);
     }
-
 
     public UserResponseDTO signIn(UserSignInDTORequest signInRequest) {
 
@@ -65,8 +60,6 @@ public class UserService {
 
         return userMapper.toResponseDTO(user);
     }
-
-
 
     private void validateSignUpRequest(UserSignUpDTORequest request) {
 
@@ -125,9 +118,11 @@ public class UserService {
         }
 
 
-        LocalDate thirteenYearsAgo = LocalDate.now().minusYears(13);
+        LocalDate thirteenYearsAgo = LocalDate.now().minusYears(18);
         if (request.birthdate().isAfter(thirteenYearsAgo)) {
             throw new IllegalArgumentException("User must be at least 13 years old");
         }
     }
+
+
 }

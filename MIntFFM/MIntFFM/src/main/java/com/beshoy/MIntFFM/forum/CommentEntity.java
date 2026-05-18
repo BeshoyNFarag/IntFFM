@@ -3,8 +3,13 @@ package com.beshoy.MIntFFM.forum;
 
 import com.beshoy.MIntFFM.user.UserEntity;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.time.LocalDateTime;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "comments")
 public class CommentEntity {
@@ -40,38 +45,7 @@ public class CommentEntity {
 
     }
 
-    // Getters and Setters
-    public Long getCommentId() {
-        return commentId;
-    }
 
-    public void setCommentId(Long id) {
-        this.commentId = id;
-    }
-
-    public String getComment() {
-        return comment;
-    }
-
-    public void setComment(String comment) {
-        this.comment = comment;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public PostEntity getPost() {
-        return post;
-    }
-
-    public void setPost(PostEntity post) {
-        this.post = post;
-    }
 
 
 }
