@@ -1,6 +1,7 @@
 package com.beshoy.MIntFFM.user;
 
 
+import com.beshoy.MIntFFM.forum.CommentEntity;
 import com.beshoy.MIntFFM.forum.PostEntity;
 import jakarta.persistence.*;
 import java.time.LocalDate;
@@ -38,6 +39,9 @@ public class UserEntity {
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<PostEntity> posts;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<CommentEntity> comments;
 
     @PrePersist
     protected void onCreate() {

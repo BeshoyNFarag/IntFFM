@@ -2,11 +2,10 @@ package com.beshoy.MIntFFM.forum;
 
 import java.time.LocalDateTime;
 
-public record CommentResponseDTO(
-        Long id,
-        String comment,
+public record PostDeleteResponseDTO(
         Long postId,
-        String firstName,
+        String title,
+        String publisherName,
         LocalDateTime createdAt,
         LocalDateTime deletedAt
 ) {
