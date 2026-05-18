@@ -388,7 +388,7 @@ class UserMapperTest {
         assertEquals(createdAt, response.createdAt());
     }
 
-    @org.jetbrains.annotations.NotNull
+
     private static Stream<Arguments> provideMultipleNullFields() {
         return Stream.of(
                 // All fields null

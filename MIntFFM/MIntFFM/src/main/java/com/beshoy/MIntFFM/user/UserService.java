@@ -58,7 +58,7 @@ public class UserService {
                 .orElseThrow(() -> new RuntimeException("Invalid credentials"));
 
 
-        if (!signInRequest.password().equals(user.getPassword())) {
+        if (!signInRequest.password().equals(user.getPassword())){
             throw new RuntimeException("Invalid credentials");
         }
 
